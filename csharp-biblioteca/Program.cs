@@ -49,8 +49,8 @@
         {
             public Utente Utente { get; set; }
             public inPrestito Documento { get; set; }
-            public DateTime DataInizio { get; set; }
-            public DateTime DataFine { get; set; }
+            public string DataInizio { get; set; }
+            public string DataFine { get; set; }
         }
 
         //classe per raggruppare tutte le liste, con vari metodi per interagirci
@@ -96,7 +96,7 @@
                 return inPrestito.FindAll(doc => doc.Titolo.Contains(titolo));
             }
 
-            public void PrestitoElem(inPrestito elem, Utente utente, DateTime dataInizio, DateTime dataFine)
+            public void PrestitoElem(inPrestito elem, Utente utente, string dataInizio, string dataFine)
             {
                 if (inPrestito.Contains(elem) && utenti.Contains(utente))
                 {
