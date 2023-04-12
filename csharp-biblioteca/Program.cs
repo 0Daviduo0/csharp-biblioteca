@@ -56,9 +56,9 @@
         //classe per raggruppare tutte le liste, con vari metodi per interagirci
         class Biblioteca
         {
-            private List<inPrestito> inPrestito = new List<inPrestito>();
-            private List<Utente> utenti = new List<Utente>();
-            private List<Prestito> prestiti = new List<Prestito>();
+            private List<inPrestito> inPrestito = new List<inPrestito>(); //sono contenute le info sugli articoli
+            private List<Utente> utenti = new List<Utente>(); //sono contenute le info sugli utenti
+            private List<Prestito> prestiti = new List<Prestito>(); //sono contenute le info sui prestiti
 
             //aggiunta elemento in prestito
             public void AggInPrestito(inPrestito elem)
@@ -81,7 +81,7 @@
             //ricerca dei prestiti tramite il codice dell'articolo
             public List<inPrestito> PrestitiPerCodice(string codice)
             {
-                return inPrestito.FindAll(doc => doc.Codice == codice);
+                return inPrestito.FindAll(inPrestito => inPrestito.Codice == codice);
             }
 
             //ricerca dei prestiti tramite nome dell'utente che ha richiesto il prestito
